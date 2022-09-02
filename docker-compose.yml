@@ -1,17 +1,15 @@
-version: '3.5'
+version: "3.5"
 services:
+
   nginx:
-    container_name: nginx-proxy
-    image: ${ENV_NGINX_IMAGE}
-    restart: unless-stopped
-    ports:
-      -80:80
-      -443:443
-    environment:
-      - "TZ:America/Detroit"
-    volumes:
-      ${ENV_SSL_CERT_DIR}:/certs
-    networks:
-      local:
-        aliases:
-          nginx
+      container_name: nginx-proxy
+      image: ${ENV_NGINX_IMAGE}
+      restart: unless-stopped
+      ports:
+        - "80:80"
+        - "443:443"
+      environment:
+        - "TZ:America/Detroit"
+      volumes:
+        - ${ENV_SSL_CERT_DIR}:/certs
+        - ${ENV_SHIB_CONF_DIR}/shibboleth2.xml:/etc/shibboleth/shibboleth2.xml
