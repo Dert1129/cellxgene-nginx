@@ -1,0 +1,14 @@
+[Unit]
+Description=My Python Application
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/var/www/myapp
+Environment="PATH=/var/www/myapp/myenv/bin"
+ExecStart=/var/www/myapp/myenv/bin/uwsgi --ini myapp.ini
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.targ
