@@ -16,3 +16,4 @@ services:
         # - ${ENV_SHIB_CONF_DIR}:/etc/shibboleth/shibboleth2.xml
         # - ${ENV_HTML_FILE}:/usr/share/nginx/
         - ${ENV_CONTAINER_FILES}:/home/
+        - ${ENV_CELLXGENE}:/var/www/html
