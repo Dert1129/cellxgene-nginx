@@ -7,13 +7,12 @@ services:
       ports:
         - "80:80"
         - "443:443"
-        - 500:5005
       environment:
         - "TZ:America/Detroit"
       volumes:
         - ~/cellxgene_VIP/data/:/data
         - ${ENV_SSL_CERT_DIR}:/certs/
-        # - ${ENV_SHIB_CONF_DIR}:/etc/shibboleth/shibboleth2.xml
-        # - ${ENV_HTML_FILE}:/usr/share/nginx/
-        - ${ENV_CONTAINER_FILES}:/home/
+        - ~/cellxgene_VIP/bin:/home/root
+        - ${ENV_CONTAINER_FILES}/etc/nginx/sites-enabled/:/etc/nginx/sites-enabled/
         - ${ENV_CELLXGENE}:/var/www/html
+        - ./bin:/home

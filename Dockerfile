@@ -27,7 +27,7 @@ RUN sudo apt-get install -y python3.8 \
   && sudo apt-get install -y python-is-python3 
 
 RUN pip3 install cellxgene
-
+RUN sudo apt-get install curl -y
 # COPY ./container_files /
 # COPY ./index.html /var/lib/nginx/html/index.html
 
@@ -35,7 +35,6 @@ RUN pip3 install cellxgene
 
 EXPOSE 80
 EXPOSE 443
-EXPOSE 5000
 
 STOPSIGNAL SIGQUIT
 
