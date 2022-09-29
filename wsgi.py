@@ -1,5 +1,4 @@
-from myapp import create_app
-
+from cellxgene import cellxgene
 app = create_app()
 
 if __name__ == "__main__":

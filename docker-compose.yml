@@ -14,5 +14,4 @@ services:
         - ${ENV_SSL_CERT_DIR}:/certs/
         - ~/cellxgene_VIP/bin:/home/root
         - ${ENV_CONTAINER_FILES}/etc/nginx/sites-enabled/:/etc/nginx/sites-enabled/
-        - ${ENV_CELLXGENE}:/var/www/html
         - ./bin:/home

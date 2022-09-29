@@ -28,10 +28,9 @@ RUN sudo apt-get install -y python3.8 \
 
 RUN pip3 install cellxgene
 RUN sudo apt-get install curl -y
-# COPY ./container_files /
-# COPY ./index.html /var/lib/nginx/html/index.html
-
-
+COPY ./container_files/myapp.ini /
+COPY ./cellxgeneVIP.sh /home
+RUN chmod +x /home/cellxgeneVIP.sh
 
 EXPOSE 80
 EXPOSE 443
